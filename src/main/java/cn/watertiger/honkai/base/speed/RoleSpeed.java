@@ -34,6 +34,11 @@ public class RoleSpeed {
         actionValue = calculateActionValue();
     }
 
+    /**
+     * 行动值计算公式 actionValue = 10000/currentSpeed
+     *
+     * @return 计算出的行动值
+     */
     public int calculateActionValue() {
         Preconditions.checkArgument(currentSpeed != 0);
         actionValue = 10000 / currentSpeed;
