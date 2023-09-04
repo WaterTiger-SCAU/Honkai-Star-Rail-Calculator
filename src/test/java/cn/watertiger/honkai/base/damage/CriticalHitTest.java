@@ -18,7 +18,9 @@ class CriticalHitTest {
                 // mock 的双爆数据
                 Arguments.of("100%", "120%"),
                 // 这是我的毕业丹恒恒的双爆
-                Arguments.of("70%", "178%")
+                Arguments.of("61%", "142%"),
+                // 这是我的小毕业饮月的双爆
+                Arguments.of("78%", "174%")
         );
     }
 
