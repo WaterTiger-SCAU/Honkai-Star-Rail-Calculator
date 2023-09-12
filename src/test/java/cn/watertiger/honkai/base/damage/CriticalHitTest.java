@@ -1,5 +1,6 @@
 package cn.watertiger.honkai.base.damage;
 
+import cn.watertiger.honkai.base.util.DoubleFormatUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,8 +29,8 @@ class CriticalHitTest {
     @ParameterizedTest
     @MethodSource("criticalPairProvider")
     void test(String criticalRateText, String criticalDamageText) {
-        double criticalRate = formatByText(criticalRateText);
-        double criticalDamage = formatByText(criticalDamageText);
+        double criticalRate = DoubleFormatUtil.formatByText(criticalRateText);
+        double criticalDamage = DoubleFormatUtil.formatByText(criticalDamageText);
 
         CriticalHit criticalHit = new CriticalHit(criticalRate, criticalDamage);
         // 计算暴击期望
@@ -37,17 +38,8 @@ class CriticalHitTest {
 
         System.out.printf("暴击率: %s --> (%s)%n", criticalRateText, criticalRate);
         System.out.printf("暴击伤害: %s --> (%s)%n", criticalDamageText, criticalDamage);
-        System.out.printf("期望伤害: %s --> (%s)%n", formatByRate(criticalExpect), criticalExpect);
+        System.out.printf("期望伤害: %s --> (%s)%n", DoubleFormatUtil.formatByRate(criticalExpect), criticalExpect);
 
         Assertions.assertEquals(criticalRate * criticalDamage, criticalExpect);
-    }
-
-    private double formatByText(String rateText) {
-        String replace = rateText.replace("%", "");
-        return ((double) Integer.parseInt(replace)) / 100;
-    }
-
-    private String formatByRate(double rate) {
-        return rate * 100 + "%";
     }
 }

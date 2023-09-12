@@ -1,7 +1,7 @@
 package cn.watertiger.honkai.base.damage;
 
 /**
- * @author liyetian
+ * @author water-tiger
  */
 public class BaseDamage {
     /**
