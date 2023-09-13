@@ -1,5 +1,6 @@
 package cn.watertiger.honkai.base.damage;
 
+import cn.watertiger.honkai.base.damage.superpose.DamageIncrease;
 import cn.watertiger.honkai.base.util.DoubleFormatUtil;
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.Assertions;
@@ -30,15 +31,15 @@ class DamageIncreaseTest {
 
     @ParameterizedTest
     @MethodSource("increaseListProvider")
-    void test(List<String> increaseTextList, String exceptText) {
+    void test(List<String> increaseTextList, String expectText) {
         DamageIncrease damageIncrease = new DamageIncrease();
 
         increaseTextList.stream()
                 .map(DoubleFormatUtil::formatByText)
-                .forEach(damageIncrease::addDamageIncrease);
+                .forEach(damageIncrease::superpose);
 
         double total = damageIncrease.calculateTotal();
 
-        Assertions.assertEquals(total, DoubleFormatUtil.formatByText(exceptText));
+        Assertions.assertEquals(total, DoubleFormatUtil.formatByText(expectText));
     }
 }
