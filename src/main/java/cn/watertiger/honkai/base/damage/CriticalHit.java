@@ -1,5 +1,8 @@
 package cn.watertiger.honkai.base.damage;
 
+/**
+ * @author water-tiger
+ */
 public class CriticalHit {
     /**
      * 暴击率
