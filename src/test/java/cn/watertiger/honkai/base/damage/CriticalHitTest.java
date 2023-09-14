@@ -21,7 +21,9 @@ class CriticalHitTest {
                 // 这是我的毕业丹恒恒的双爆
                 Arguments.of("61%", "142%"),
                 // 这是我的小毕业饮月的双爆
-                Arguments.of("78%", "174%")
+                Arguments.of("78%", "174%"),
+                // 套装更换后最终版本的饮月
+                Arguments.of("81.5%", "168.5%")
         );
     }
 
