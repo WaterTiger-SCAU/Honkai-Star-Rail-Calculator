@@ -1,5 +1,7 @@
 package cn.watertiger.honkai.base.damage.superpose;
 
+import cn.watertiger.honkai.base.util.DoubleMathUtil;
+
 /**
  * 增伤区
  *
@@ -14,6 +16,6 @@ public class DamageIncrease extends SuperposeModel<Double> {
 
     @Override
     protected Double superposeCalculate(Double sourceValue, Double superposeValue) {
-        return Double.sum(sourceValue, superposeValue);
+        return DoubleMathUtil.add(sourceValue, superposeValue);
     }
 }

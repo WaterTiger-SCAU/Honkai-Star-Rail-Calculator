@@ -1,5 +1,7 @@
 package cn.watertiger.honkai.base.damage;
 
+import cn.watertiger.honkai.base.util.DoubleMathUtil;
+
 /**
  * @author water-tiger
  */
@@ -19,7 +21,7 @@ public class BaseDamage {
     }
 
     public int calculateDamageValue() {
-        return (int) (attack * damageMultiplier);
+        return (int) (DoubleMathUtil.multiply(attack, damageMultiplier));
     }
 
     /* Getter & Setter */

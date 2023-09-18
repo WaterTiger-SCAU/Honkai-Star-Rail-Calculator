@@ -1,5 +1,7 @@
 package cn.watertiger.honkai.base.damage;
 
+import java.math.BigDecimal;
+
 /**
  * @author water-tiger
  */
@@ -19,7 +21,9 @@ public class CriticalHit {
     }
 
     public double getCriticalExpect() {
-        return criticalRate * criticalDamage;
+        return BigDecimal.valueOf(criticalRate)
+                .multiply(BigDecimal.valueOf(criticalDamage))
+                .doubleValue();
     }
 
     /* Getter & Setter */

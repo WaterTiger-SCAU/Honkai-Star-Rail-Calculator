@@ -25,7 +25,7 @@ public class DoubleMathUtil {
         BigDecimal b2 = BigDecimal.valueOf(b);
 
         return b1.add(b2)
-                .setScale(2, RoundingMode.HALF_UP)
+                .setScale(10, RoundingMode.HALF_UP)
                 .doubleValue();
     }
 
@@ -41,7 +41,7 @@ public class DoubleMathUtil {
         BigDecimal b2 = BigDecimal.valueOf(b);
 
         return b1.subtract(b2)
-                .setScale(2, RoundingMode.HALF_UP)
+                .setScale(10, RoundingMode.HALF_UP)
                 .doubleValue();
     }
 
@@ -57,7 +57,7 @@ public class DoubleMathUtil {
         BigDecimal b2 = BigDecimal.valueOf(b);
 
         return b1.multiply(b2)
-                .setScale(2, RoundingMode.HALF_UP)
+                .setScale(10, RoundingMode.HALF_UP)
                 .doubleValue();
     }
 
@@ -72,7 +72,7 @@ public class DoubleMathUtil {
         BigDecimal b1 = BigDecimal.valueOf(a);
         BigDecimal b2 = BigDecimal.valueOf(b);
 
-        return b1.divide(b2, 2, RoundingMode.HALF_UP)
+        return b1.divide(b2, 5, RoundingMode.HALF_UP)
                 .doubleValue();
     }
 }

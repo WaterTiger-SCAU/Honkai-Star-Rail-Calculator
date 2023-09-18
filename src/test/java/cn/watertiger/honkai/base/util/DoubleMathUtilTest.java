@@ -16,8 +16,8 @@ class DoubleMathUtilTest {
         );
     }
 
-    private boolean newScaleEqTwo(double d) {
-        return BigDecimal.valueOf(d).setScale(2, RoundingMode.HALF_UP).doubleValue() == d;
+    private boolean newScaleEq(double d) {
+        return BigDecimal.valueOf(d).setScale(5, RoundingMode.HALF_UP).doubleValue() == d;
     }
 
     @ParameterizedTest
@@ -30,8 +30,8 @@ class DoubleMathUtilTest {
         System.out.println("utilOperationResult:" + utilOperationResult);
 
         Assertions.assertTrue(
-                !newScaleEqTwo(doubleOperationResult)
-                && newScaleEqTwo(utilOperationResult)
+                !newScaleEq(doubleOperationResult)
+                && newScaleEq(utilOperationResult)
         );
     }
 
@@ -45,8 +45,8 @@ class DoubleMathUtilTest {
         System.out.println("utilOperationResult:" + utilOperationResult);
 
         Assertions.assertTrue(
-                !newScaleEqTwo(doubleOperationResult)
-                        && newScaleEqTwo(utilOperationResult)
+                !newScaleEq(doubleOperationResult)
+                        && newScaleEq(utilOperationResult)
         );
     }
 
@@ -60,8 +60,8 @@ class DoubleMathUtilTest {
         System.out.println("utilOperationResult:" + utilOperationResult);
 
         Assertions.assertTrue(
-                !newScaleEqTwo(doubleOperationResult)
-                        && newScaleEqTwo(utilOperationResult)
+                !newScaleEq(doubleOperationResult)
+                        && newScaleEq(utilOperationResult)
         );
     }
 
@@ -75,8 +75,8 @@ class DoubleMathUtilTest {
         System.out.println("utilOperationResult:" + utilOperationResult);
 
         Assertions.assertTrue(
-                !newScaleEqTwo(doubleOperationResult)
-                        && newScaleEqTwo(utilOperationResult)
+                !newScaleEq(doubleOperationResult)
+                        && newScaleEq(utilOperationResult)
         );
     }
 }

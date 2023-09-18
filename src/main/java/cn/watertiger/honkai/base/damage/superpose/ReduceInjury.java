@@ -1,5 +1,7 @@
 package cn.watertiger.honkai.base.damage.superpose;
 
+import cn.watertiger.honkai.base.util.DoubleMathUtil;
+
 /**
  * 减伤
  *
@@ -37,6 +39,6 @@ public class ReduceInjury extends SuperposeModel<Double> {
 
     @Override
     protected Double superposeCalculate(Double sourceValue, Double superposeValue) {
-        return sourceValue - superposeValue;
+        return DoubleMathUtil.subtract(sourceValue, superposeValue);
     }
 }
